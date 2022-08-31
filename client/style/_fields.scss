@@ -1,0 +1,102 @@
+.field {
+  &.FieldTextInput, &.FieldTextareaInput, &.FieldSelectInput {
+    input,
+    input:-webkit-autofill,
+    select,
+    textarea {
+      @include inputAppearanceNone();
+      -webkit-box-shadow: 0 0 0 30px $transparent inset !important; //overrides highlight color
+      transition: background 5000s ease-in-out 0s; //also overrides highlight color
+      color: $black;
+      -webkit-text-fill-color: $black; //overrides text color
+      background: $transparent;
+      border-radius: 0;
+      border: 1px solid $black;
+    }
+  }
+
+  &.FieldTextInput {
+    input[type="date"] {
+      &::-webkit-calendar-picker-indicator {
+        color: $transparent;
+        background: $transparent;
+      }
+
+      &::-webkit-clear-button {
+        display: none;
+        -webkit-appearance: none;
+      }
+    }
+
+    input[type="number"] {
+      -webkit-appearance: textfield;
+    }
+  }
+
+  &.FieldSelectInput {
+    position: relative;
+    z-index: 1;
+
+    .selectWrap {
+      //Custom dropdown icon
+      &:before {
+        //content: "\e900";
+        //font-family: 'icomoon';
+        box-sizing: border-box;
+        position: absolute;
+        background: transparent;
+        z-index: -1;
+        color: $black;
+        font-size: rem(16);
+        top: calc(50% - #{rem(8)};
+        right: rem(12);
+      }
+    }
+  }
+
+  &.FieldRadioInput, &.FieldCheckbox {
+    text-align: left;
+    margin-top: rem(8);
+
+    .title {
+      display: block;
+      width: 100%;
+    }
+
+    input {
+      display: none;
+    }
+
+    //Custom checkbox
+    label::before {
+      content: '';
+      background: transparent;
+      display: inline-block;
+      vertical-align: middle;
+      border: 2px solid $black;
+      margin: 0 rem(6) 0 0;
+      height: rem(12);
+      width: rem(12);
+    }
+
+    //Custom checked box
+    input:checked + label {
+      &::before {
+        display: inline-block;
+        vertical-align: middle;
+        border: 2px solid $black;
+        background: $black;
+        margin: 0 rem(6) 0 0;
+        height: rem(12);
+        width: rem(12);
+      }
+    }
+  }
+
+  &.FieldTextareaInput {
+    textarea {
+      resize: none;
+      min-height: rem(160);
+    }
+  }
+}

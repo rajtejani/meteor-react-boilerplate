@@ -1,0 +1,36 @@
+.layout {
+  @include iPhoneXNotch;
+  height: 100%;
+  width: 100%;
+
+  &.ExternalLayout, &.InternalLayout {
+    overflow: hidden;
+
+    .content {
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+    }
+  }
+
+  &.InternalLayout {
+    position: relative;
+
+    .content {
+      overflow: auto;
+    }
+  }
+
+  &.ExternalSysAdminLayout, &.InternalSysAdminLayout {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .content {
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

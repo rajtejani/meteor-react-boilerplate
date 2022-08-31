@@ -1,0 +1,25 @@
+{
+  "name": "boilerplate",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.4",
+    "bcrypt": "^5.0.0",
+    "meteor-node-stubs": "^1.0.0",
+    "moment-timezone": "^0.5.31",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-ga": "^3.0.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "meteor": {},
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-plugin-meteor": "^7.2.2"
+  }
+}

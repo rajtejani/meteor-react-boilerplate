@@ -1,0 +1,14 @@
+.partial {
+  &.PartialModalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .closeIcon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}

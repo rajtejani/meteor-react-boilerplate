@@ -1,0 +1,15 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "",
+      "MAIL_URL": ""
+    }
+  },
+  "public": {
+    "environment": "dev",
+    "defaultUserEmail": "info@NEWAPP.com",
+    "ga": ""
+  },
+  "AWSAccessKeyId": "",
+  "AWSSecretAccessKey": ""
+}

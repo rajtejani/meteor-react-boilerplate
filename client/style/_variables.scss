@@ -1,0 +1,80 @@
+// Sizes (stolen from Dustin Jones)
+$fontSizeDefault: 16;
+@function rem($pixels) {
+  $baseline: $fontSizeDefault / ($fontSizeDefault * 0 + 1);
+  $size: $pixels/$baseline;
+  @return $size + rem;
+}
+
+//Fonts
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
+$icomoon: 'icomoon';
+
+//Colors
+$transparent: rgba(255, 255, 255, 0);
+$black: rgba(26, 26, 36, 1);
+$white: rgba(255, 255, 255, 1);
+
+// Media Queries
+$mediaMobile: screen and (max-width: 700px);
+$mediaTabletLarge: screen and (min-height: 967px);
+$mediaDesktopShort: screen and (min-height: 769px) and (max-height: 966px);
+$mediaTabletShort: screen and (max-height: 768px);
+$mediaIphoneX: only screen and (width: 375px) and (height: 812px) and (orientation: portrait) and (-webkit-device-pixel-ratio : 3);
+
+// Mixins
+@mixin inputAppearanceNone() {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@mixin iPhoneXNotch() {
+  @media /*iphone X*/ only screen and (width: 375px) and (height: 812px) and (orientation: portrait) and (-webkit-device-pixel-ratio : 3),
+    /*iphone XR*/ only screen and (width: 375px) and (height: 734px) and (orientation: portrait) and (-webkit-device-pixel-ratio : 2),
+    /*iphone XS*/ only screen and (width: 375px) and (height: 812px) and (orientation: portrait) and (-webkit-device-pixel-ratio : 3),
+    /* iphone XS Max*/ only screen and (width: 375px) and (height: 734px) and (orientation: portrait) and (-webkit-device-pixel-ratio : 3) {
+    bottom: rem(20);
+  }
+}
+
+@mixin hidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+@mixin clearfix {
+  *zoom: 1;
+  clear: both;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+    line-height: 0;
+    clear: both;
+  }
+}
